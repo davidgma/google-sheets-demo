@@ -65,13 +65,15 @@ You can now check that it works:
 `ng serve --open`  
 It should open up a new browser tab with the default Angular web app.
 
-Optionally you can update to the latest versions of all the software and dependencies and then check it still works:
+Optionally you can update to the latest versions of all the software and dependencies, remove and recreate the package-lock.json file and then check it still works. The purpose of this is that, hopefully, it gets rid of all the vulnerability warnings from both npm and Github:
 
 ```
 ncu
 ncu -u
 npm update
 ncu
+rm package-lock.json
+npm install
 ng serve --open
 ```
 
