@@ -45,8 +45,8 @@ Then choose New:
 
 Then choose a name, don't initialize with a readme or add a .gitignore or a license. Then click 'Create Repository'.
 
-Then it will give you a path to the repository which will end in .git. In the case of my repository for this demo, it is https://github.com/davidgma/google-sheets-demo.git.   
-You can also get this path from the main screen of the repository by clicking on 'Clone or download' and clicking on the copy-to-clipboard icon.
+Then it will give you a path to the repository which will end in .git. In the case of my repository for this demo, it is https://github.com/davidgma/google-sheets-demo.git. You will need this path in a minute so it's best to just leave this page there as it is.   
+But if for any reason you lose the path, you can also get it from the main screen of the repository by clicking on 'Clone or download' and clicking on the copy-to-clipboard icon.
 ![Get the repository path](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/04_repository_path.png "Get the repository path")
 
 Now go into a command prompt on your local machine. I use Linux so there will be some differences if you are using Windows, such as the directory separator character.  
