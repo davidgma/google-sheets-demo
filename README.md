@@ -29,6 +29,8 @@ As noted above, you need to first install the following software, all of which i
 [Git](https://git-scm.com)  
 [Visual Studio Code](https://code.visualstudio.com)  
 [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages)  
+(Actually, contrary to the official guide, I installed angular-cli-ghpages using the command `npm install -g angular-cli-ghpages`. 
+I found [this guide](https://alligator.io/angular/deploying-angular-app-github-pages/) useful.)
 
 Optionally:  
 [npm-check-updates](https://github.com/tjunnone/npm-check-updates)
@@ -135,5 +137,10 @@ git commit -a -m "Upload changes."
 git push
 ngh
 ```
+
+If you get tired of putting in your Github username and password each time, then you can reduce it to only once in 15 minutes with the command:  
+`git config --global credential.helper cache`  
+or you could reduce it to once every 24 hours with the command:  
+`git config --global credential.helper 'cache --timeout=86400'`
 
 #### Option 2 - Setting up a new Stackblitz project.
