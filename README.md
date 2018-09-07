@@ -21,20 +21,14 @@ If you choose the Github Pages option, you'll also need a local installation of 
 
 As noted above, you need to first install the following software, all of which is free, on your computer, if it is not already installed. Please follow the guidance they each provide on how to do the installations:
 
-[Node](https://nodejs.org)
+[Node](https://nodejs.org)  
+[Typescript](https://www.typescriptlang.org)  
+[Angular Cli](https://angular.io)  
+[Git](https://git-scm.com)  
+[Visual Studio Code](https://code.visualstudio.com)  
+[angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages)  
 
-[Typescript](https://www.typescriptlang.org)
-
-[Angular Cli](https://angular.io)
-
-[Git](https://git-scm.com)
-
-[Visual Studio Code](https://code.visualstudio.com)
-
-[angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages)
-
-Optionally:
-
+Optionally:  
 [npm-check-updates](https://github.com/tjunnone/npm-check-updates)
 
 
