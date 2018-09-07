@@ -119,12 +119,12 @@ Then, under settings, the Github Pages source should be set to gh-pages branch. 
 ![Source setting in Github](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/07_ghpages.png "Set the Github Pages source to gh-pages branch")
 
 
-You should now be able to view the default app created by the Angular Cli in Github pages. It will tell you the address to use under the Github Pages setting in the settings page and it will probably be in the following format:  
+You should now be able to view the default app created by the Angular Cli in Github Pages. It will tell you the address to use under the Github Pages setting in the settings page and it will probably be in the following format:  
 https://your-github-username.github.io/your-project-name/
 
 ![The default app in Github Pages](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/08_default_app.png "The default app served by Github pages")
 
-Going forward, you will build your app locally using VS Code. As with normal Angular Cli usage, you will test your code as you go along using `ng serve --open`. When you want to save the changes to Github and have Github Pages serve the latest version of your code, issue the following commands (replacing your-github-username and your-project-name appropriately). I use a script with the commands to save me typing them out each time. The `-m "Upload changes."` is the git commit message and you can change it each time to something more helpful if you wish:  
+Going forward, you will build your app locally using VS Code. As with normal Angular Cli usage, you will probably want to test your code as you go along using `ng serve --open`. This still works the same as ever. When you want to save the changes to Github and have Github Pages serve the latest version of your app, issue the following commands (replacing your-github-username and your-project-name appropriately). I use a script with the commands to save me typing them out each time. The `-m "Upload changes."` is the git commit message and you can change it each time to something more helpful if you wish:  
 
 ```
 ng build --base-href "https:/your-github-username.github.io/your-project-name/"
