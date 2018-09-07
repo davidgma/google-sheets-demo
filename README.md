@@ -50,10 +50,10 @@ You can also get this path from the main screen of the repository by clicking on
 ![Get the repository path](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/04_repository_path.png "Get the repository path")
 
 Now go into a command prompt on your local machine. I use Linux so there will be some differences if you are using Windows, such as the directory separator character.  
-Navigate to a directory that is just above where you want the new code to be:
+Navigate to a directory that is just above where you want the new code to be:  
 `cd ~/local/dev`
 
-Issue the Angular Cli command to create a new project. It will automatically create a subdirectory named after the project and write all the files there.  
+Issue the Angular Cli command to create a new project. It will automatically create a subdirectory named after the project and write all the files there. You can replace 'google-sheets-demo' by whatever you want to call your project.    
 `ng new google-sheets-demo`
 
 Go into the new subdirectory:  
@@ -63,7 +63,7 @@ You don't need to issue a `git init` command because the Angular Cli does it for
 
 You can now check that it works:  
 `ng serve --open`  
-It should open up a new browser tab with the default web app.
+It should open up a new browser tab with the default Angular web app.
 
 Optionally you can update to the latest versions of all the software and dependencies and then check it still works:
 
@@ -75,7 +75,7 @@ ncu
 ng serve --open
 ```
 
-Next, update the local git repository (git works by keeping a local repository on your computer and then a remote one in the cloud, such as on Github). (The `git status` commands are optional but handy to see that it has worked):
+Next, update the local git repository. (Git works by keeping a local repository on your computer and then a remote one in the cloud, such as on Github. You have to update the local repository first before pushing it all to the Github repository) (The `git status` commands are optional but handy to see that it has worked):
 
 ```
 git status
@@ -101,7 +101,7 @@ At this point, you should be able to see the files there in your Github reposito
 Next you need to change a setting that the Angular Cli made by default in a file it created automatically. It is in the file angular.json which is in the top level subdirectory (named after your project). It is the option outputPath and by default it is set to dist/your-project-name but it needs to just be dist. You can amend it in a text editor or VS Code.  
 ![Set outputPath to dist](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/05_outputpath.png "Set the outputPath to dist")
 
-Next, build the default Angular app and set it up as a Github Pages app using the angular-cli-ghpages program that you installed earlier. You will need to use your Github user name and whatever you called your project if you didn't call it google-sheets-demo in the https address below.
+Next, build the default Angular app and set it up as a Github Pages app using the angular-cli-ghpages program that you installed earlier. You will need to use your Github user name and whatever you called your project if you didn't call it google-sheets-demo in the https address below. Make sure you have the forward slash at the end, it's needed.
 
 ```
 ng build --base-href "https://your-github-username.github.io/google-sheets-demo/"
@@ -116,15 +116,15 @@ Just as a check, you should be able to see in the settings for your project in G
 ![Settings in Github](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/06_settings.png "Go into the settings")
 
 Then, under settings, the Github Pages source should be set to gh-pages branch. If it isn't, set it yourself.  
-![Source setting in Github](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/06_settings.png "Set the Github Pages source to gh-pages branch")
+![Source setting in Github](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/07_ghpages.png "Set the Github Pages source to gh-pages branch")
 
 
 You should now be able to view the default app created by the Angular Cli in Github pages. It will tell you the address to use under the Github Pages setting in the settings page and it will probably be in the following format:  
 https://your-github-username.github.io/your-project-name/
 
-![The default app in Github Pages](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/06_settings.png "The default app served by Github pages")
+![The default app in Github Pages](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/08_default_app.png "The default app served by Github pages")
 
-Going forward, you will build your app locally using VS Code. As with normal Angular Cli usage, you will test your code as you go along using `ng serve --open`. When you want to save the changes to Github and have Github Pages serve the latest version of your code, issue the following commands (replacing your-github-username and your-project-name appropriately). I use a script with the commands to save me typing them out each time:  
+Going forward, you will build your app locally using VS Code. As with normal Angular Cli usage, you will test your code as you go along using `ng serve --open`. When you want to save the changes to Github and have Github Pages serve the latest version of your code, issue the following commands (replacing your-github-username and your-project-name appropriately). I use a script with the commands to save me typing them out each time. The `-m "Upload changes."` is the git commit message and you can change it each time to something more helpful if you wish:  
 
 ```
 ng build --base-href "https:/your-github-username.github.io/your-project-name/"
