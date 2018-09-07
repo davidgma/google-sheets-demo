@@ -27,4 +27,5 @@ git remote add origin https://github.com/davidgma/google-sheets-demo.git
 git remote -v
 # Push the local changes to Github
 git push origin master
+git push --set-upstream origin master
 
