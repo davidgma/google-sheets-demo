@@ -10,4 +10,21 @@ ng serve --open
 # Update to the latest versions:
 ncu
 ncu -u
+npm update
+ncu
+
+# Check it still works then close the web page and stop the server again:
+ng serve --open
+
+# Update local git repository
+git status
+git add *
+git commit -a -m "Initial sync."
+
+# one-off link of the local git repository to the github repository
+git remote add origin https://github.com/davidgma/google-sheets-demo.git
+# verify the new remote url
+git remote -v
+# Push the local changes to Github
+git push origin master
 
