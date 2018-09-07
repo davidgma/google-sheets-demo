@@ -1,0 +1,13 @@
+created blank github repository called google-sheets-demo
+went into ~/local/dev
+ng new google-sheets-demo
+cd google-sheets-demo
+# no need for this: ng does it for you: git init
+# check it works:
+ng serve --open
+# Then stop the server again (ctrl+c).
+
+# Update to the latest versions:
+ncu
+ncu -u
+
