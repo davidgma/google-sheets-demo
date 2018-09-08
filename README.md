@@ -143,4 +143,19 @@ If you get tired of putting in your Github username and password each time, then
 or you could reduce it to once every 24 hours with the command:  
 `git config --global credential.helper 'cache --timeout=86400'`
 
+If you want to work on the project on another computer, use git clone with the path to the .git project file that you used earlier. Git will create a subdirectory under the directory from which you issue the command. Then go into the subdirectory and install the dependencies: 
+
+```
+git clone https://github.com/your-github-username/your-project-name.git
+cd your-project-name
+npm install
+```
+
+Then you use the same commands as before to push any changes you make back to the Github repository and re-publish it on Github Pages.  
+Then, back on the original computer, if you want to pull in all the latest changes that you made on the other computer, use git pull:  
+```
+git pull
+```
+
+
 #### Option 2 - Setting up a new Stackblitz project.
