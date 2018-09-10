@@ -228,10 +228,63 @@ In line with the Google documentation, you also need 2 meta tags in the head sec
   <meta name="google-signin-scope" 
   content="profile email https://www.googleapis.com/auth/spreadsheets">
   <meta name="google-signin-client_id" content=
-  "492755457190-ccvd44h31u9t4043g72jlvpk2dsel205.apps.googleusercontent.com">
+  "555978706374-qiqi420bj425if9iostbf483l4qj75he.apps.googleusercontent.com">
 ```
 The Google documentation has just the scopes profile and email, but as we also want authorisation to view a user's spreadsheets, we also need to put in the spreadsheet scope as shown above. If you are wondering what other scopes you could put it, they are listed [here](https://developers.google.com/identity/protocols/googlescopes).
 
-The client id I have above is my own one. You can use it for trying out my demo and also when you are developing locally and serving to http://localhost:4200 but as I have restricted it to certain domains, you will need to get your own one if you want to develop your own app. Getting a client id is easy to do and is documented to some extent on the [Google Sign-In for Websites](https://developers.google.com/identity/sign-in/web/sign-in) pages. I'll go over it in more detail here though because it doesn't cover the sheets API part and isn't that clear anyway. These are the steps to take:
+The client id I have above (the string starting 555978) is my own one. You can use it for trying out my demo and also when you are developing locally and serving to http://localhost:4200 but as I have restricted it to certain domains, you will need to get your own one if you want to develop your own app. Getting a client id is free to do and easyish and is documented to some extent on the [Google Sign-In for Websites](https://developers.google.com/identity/sign-in/web/sign-in) pages. But I'll go over it in more detail here because it doesn't cover the sheets API part and isn't that clear anyway. These are the steps to take:
 
 First, go to the [Google developer console](https://console.cloud.google.com).
+
+If you have no projects currently with Google then I'm not sure what the page will look like - maybe it will give you a button to create a new project. But if you have, then to create a new project you need to click on the drop-down menu just to the right of where it says 'Google Cloud Platform' at the top.  
+
+![The developer console - drop down menu](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/10_api_console.png "The developer console - drop down menu")
+
+A dialog box will pop up with a 'New Project' button at the top right. Click on this.  
+
+![The developer console - drop down menu](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/11_new_project.png "The developer console - drop down menu")
+
+Put in a project name e.g. Google Sheets Demo. Then click on Edit and change the project id to something more helpful than the default it gives you. It won't let you put 'google' in the name - if you try it will say that the project id is already taken. There are some other restrictions so if it says that the project id is already taken then try removing some terms that may be restricted. Then click on Create.  
+
+![Create new project](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/12_create_project.png "Create new project")  
+
+The developer console is a bit ropy and you may just be sent back to the initial screen and if you click the drop-down menu again it may look as though the project has not been created. After clicking on the drop down menu, when you get the pop-up dialog, try clicking on the little icon of a cog on a folder and see if the project is listed there. If it is, then select it, then click on home. 
+
+![Cog icon](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/13_little_cog.png "Cog icon") 
+
+
+The Google Developers site seems to change every time I use it and behave in unpredicable ways so I wouldn't be surprised if your experience is completely different to mine. I then clicked on 'APIs & Services' on the menu listing. 
+
+![APIs and services menu](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/14_apis_and_services_menu.png "APIs and services menu") 
+
+If your page looks different, try to find the APIs & Services page as best you can. You need to aim to get to a page where your project is shown at the top to the right of 'Google Cloud Platform' and you have the options 'Dashboard', 'Library' and 'Credentials' to the left:
+
+![APIs and services page](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/15_apis_page.png "APIs and services page") 
+
+While creating a new project for this demo, it automatically enabled a lot of APIs - 12 in all - that appeared further down the dashboard. It's never done this before (or perhaps I just never noticed before) and I don't need the APIs. I always get frustrated by the unpredicability of the Google Cloud Platform interface - it seems to behave differently each time I use it. AI tried to disable all the APIs that it had automatically added in but it wouldn't let me so I just left them as-is.
+
+Anyway, next, go to Credentials, click on Create Credentials and then choose OAuth client id.
+
+![Create credentials](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/16_create_credentials.png "Create credentials") 
+
+
+It then says that you need to create a product name on the consent screen. This is what appears when users are asked whether they want to give the app permission to view their data. Click on 'Configure consent screen' and call it something. I didn't fill in any other fields but you can fill out whatever you want. Then click on Save.  
+
+It will take you back to the 'Create OAuth client ID' page. Choose Web Application, give it a name and, for safety, put in some restrictions for the origin and redirect. These will typically be the address of your app and, at least for testing, the Angular localhost address and port. I put in paths for the Stackblitz app (the address of the opened app not the IDE for the app) and for the Github Pages app address. Then click create.  
+
+![OAuth dialog](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/17_oauth_form.png "OAuth dialog")
+
+Hopefully, it will then tell you your client id although there's really no telling what it might do. This is what you need to put in the index.html file for the meta google-signin-client_id. You may as well put it in now. You don't need it again. It will also tell you your secret key but you don't need this. 
+
+There's one thing left to do in the glorious Google Cloud Platform console, and that is to add in the sheets API. Go to Library (from the left panel) and where it says 'Search for an API' and type in 'sheets'. It will hopefully give you the Google Sheets API in the results. Click on this and then click 'Enable'.  
+
+![Enable sheets API](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/18_sheets_api_add.gif "Enable sheets API")
+
+It then says "To use this API, you may need credentials. Click 'Create credentials' to get started." But in fact you don't need any further credentials. The OAuth that you've already created is enough and if you do get more credentials, all it gives you is an API key which you don't need and aren't supposed to put in a web app for security reasons anyway. If people can see your API key then they can steal your usage allowance whereas if they can see your project client id it doesn't really matter so long as you have some restrictions on which web addresses can use it.  
+That is it for the Google Cloud Platform console. If you go back to the APIs & Services dashboard you should be able to see the Google Sheets API listed under 'API'.
+
+![Sheets API is listed](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/19_api_listed.png "Sheets API is listed")
+
+
+
+
