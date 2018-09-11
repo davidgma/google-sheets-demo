@@ -79,6 +79,10 @@ MIT
 MIT
 MIT
 
+@angular/forms@6.1.7
+MIT
+MIT
+
 @angular/platform-browser-dynamic@6.1.7
 MIT
 MIT
