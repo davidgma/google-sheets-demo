@@ -97,7 +97,8 @@ var AppComponent = /** @class */ (function () {
         console.log(JSON.stringify(this.model));
         gapi.load("client", function () {
             console.log("client loaded");
-            gapi.client.load('sheets', 'v4', function () {
+            gapi.client.load('https://sheets.googleapis.com/$discovery/rest?version=v4')
+                .then(function () {
                 console.log("sheets v4 loaded");
                 gapi.client.sheets.spreadsheets.values.get({
                     spreadsheetId: _this.model.sheetId,
