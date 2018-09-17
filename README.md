@@ -192,7 +192,7 @@ This is a script to put in the head section of the web page.
 
 The second hurdle to overcome is to get this script to actually load with Angular. You know whether it has loaded or not because if it does, a little Google button appears to let you sign in to the app and if it doesn't, the button doesn't appear at all. I tried a lot of things, mainly in Stackblitz, to get it to load but without success. I put the script tag in the head section of the index.html file per the Google example but it didn't load. I tried putting it in the external dependencies; it still didn't load. I tried putting it it the angular.json file. Nope. I tried taking out the `async defer` but the whole thing just hung. I think I may have tried some other things but I can't remember them all. In the end, I found a way of loading it that works perfectly and even gives you a hook into the event that is fired when it has loaded. I'm grateful to someone named [Ruben](https://github.com/rubenCodeforges) for the guidance on how to do it.
 
-As there is also another script for the APIs that needs to be loaded later, I have a service that loads an API asynchronously and returns a Promise. It is in the service js-loader.service.ts:
+To make it more re-usable, I have a service that loads an API asynchronously and returns a Promise. It is in the service js-loader.service.ts:
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -336,4 +336,36 @@ export class AppComponent implements OnInit {
 At this point you should see the Google Sign-In button and it should be able to sign you in. You'll get some messages about the app not being safe - but to use the demo you need to go ahead and say that you trust it. You can review my code to see whether you can see anything suspicious in it or build your own code that you trust based on my demo.  
 Notice that we haven't hooked up to the 'onSignIn' function that is referenced in the 'g-signin2' div in the template. It's easy to do this and it gives you access to various bits of information such as the user name, email address and id_token. I'll go over how to do this a bit later but it isn't actually needed, strangely enough, to be able to access the spreadsheets once the user has granted permissions via the Google Sign-In button. All the Google documentation I could find on how to do what I'm demonstrating here has code to pass in the API key and an authorisation token into the API functions, but it actually works perfectly well without doing either, and other parts of the documentation say you aren't supposed to put the API key in client code. I can only assume that the OAuth code that is called when you sign in and authorise the app writes the authorisation tokens to a place where the Sheets API can find it.
 
-The last step is to retrieve something from a Google Docs spreadsheet.
+The last step is to retrieve something from a Google Docs spreadsheet. If you use the debugger to see what variables are available at this point, you will find that there is a global gapi object (created by loading the platform.js file) that has a load method amongst other things but no client object under the gapi object. So you need to bring it it using the command found in the Google API documentation `gapi.load('client',`:
+
+```typescript
+gapi.load("client", () => {
+  // code called after loading the client
+}
+```
+
+This gives you a gapi.client object in the global javascript namespace which contains, amongst other things, its own load method, but no sheets object below the gapi.client object. So you need to bring this in. Most of the Google documentation that I found at the time of writing this has the code `gapi.client.load('sheets', 'v4', () => {` but, rather irritatingly, the actual documentation for this method [here](https://developers.google.com/api-client-library/javascript/reference/referencedocs) says that this calling method is deprecated. Hopefully in time Google will update their examples to not use methods that they say are deprecated. The way they want you to do it now is using 'gapi.client.load(urlOrObject)'. The `urlOrObject` is the 'Discovery Document URL' which, unhelpfully, they don't make it easy to find. Fortunately it's in the [Google Sheets documentation](https://developers.google.com/sheets/api/reference/rest/) and is 'https://sheets.googleapis.com/$discovery/rest?version=v4'. So the code that works is:
+
+```typescript
+gapi.client.load('https://sheets.googleapis.com/$discovery/rest?version=v4')
+      .then(() => {
+        // code for when the sheets library is loaded.
+}
+```
+
+Once the sheets library is loaded, you will finally have the global javascript object gapi.client.sheets.spreadsheets and from then on it's pretty plain sailing because the objects available under this tie up with the documentation from the [Google Sheets API reference](https://developers.google.com/sheets/api/reference/rest/). For example, the following gets some data from a spreadsheet:
+
+```typescript
+gapi.client.sheets.spreadsheets.values.get({
+  spreadsheetId: this.model.sheetId,
+  range: this.model.range
+  }).then((response) => {
+    // gives you 'response': a json object with the spreadsheet data you've requested.
+  }
+```
+
+Note again that you didn't need to do anything whatsoever with any session id, auth key, secret key or api key, despite what you might think from reading the Google documentation. It seems that the gapi OAuth and api code work together to handle that all for you seemlessly. So it's actually remarkably easy to use once you know how and I think Google have done an amazing job in making it so easy. I just wish they would change their documentation to show this. Hopefully they will in due course. In the mean time, I hope that this proves helpful for you.
+
+todo: documentation of getting user name etc - hooking in to the info.
+  Break code up into sections using routing. 1 section for simple demo, 1 for showing hooks to user name etc and 1 to get spreadsheet names and anything else that is a bit more useful.
+
