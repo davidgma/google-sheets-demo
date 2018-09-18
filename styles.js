@@ -1,13 +1,13 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
 
-/***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js?!./src/styles.css":
+/***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/styles.css":
 /*!**********************************************************************************************!*\
   !*** ./node_modules/raw-loader!./node_modules/postcss-loader/lib??embedded!./src/styles.css ***!
   \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');\n/* You can add global styles to this file, and also import other style files */\n"
+module.exports = "@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');\n\n\n/* Master Styles */\n\n\nh1 {\n  color: #369;\n  font-family: Ubuntu, Arial, Helvetica, sans-serif;\n  font-size: 250%;\n}\n\n\nh2, h3 {\n  color: #444;\n  font-family: Ubuntu, Arial, Helvetica, sans-serif;\n  font-weight: lighter;\n}\n\n\nbody {\n  margin: 2em;\n  font-family: Ubuntu, Arial, Helvetica, sans-serif;\n}\n\n\nbody, input[text], button {\n  color: #888;\n  font-family: Ubuntu, Cambria, Georgia;\n}\n\n\na {\n  cursor: hand;\n}\n\n\nbutton {\n  font-family: Ubuntu, Arial;\n  background-color: #eee;\n  border: none;\n  padding: 5px 10px;\n  border-radius: 4px;\n  cursor: pointer;\n  cursor: hand;\n}\n\n\nbutton:hover {\n  background-color: #cfd8dc;\n}\n\n\nbutton:disabled {\n  background-color: #eee;\n  color: #aaa;\n  cursor: auto;\n}\n\n\n/* Navigation link styles */\n\n\nnav a {\n  padding: 5px 10px;\n  text-decoration: none;\n  margin-right: 10px;\n  margin-top: 10px;\n  display: inline-block;\n  background-color: #eee;\n  border-radius: 4px;\n}\n\n\nnav a:visited, a:link {\n  color: #607D8B;\n}\n\n\nnav a:hover {\n  color: #039be5;\n  background-color: #CFD8DC;\n}\n\n\nnav a.active {\n  color: #039be5;\n}\n\n\n\n\n"
 
 /***/ }),
 
@@ -510,7 +510,7 @@ module.exports = function (css) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../node_modules/raw-loader!../node_modules/postcss-loader/lib??embedded!./styles.css */ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js?!./src/styles.css");
+var content = __webpack_require__(/*! !../node_modules/raw-loader!../node_modules/postcss-loader/lib??embedded!./styles.css */ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/styles.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
