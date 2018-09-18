@@ -1,31 +1,12 @@
-<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
-</div>
-<br>
-<button matTooltip="Sign out" (click)="signOut()">Sign out
-</button>
-<br>
-<p>
-    The Google Sign-in button should appear above.
-</p>
+<h1>Demonstrations of Using Google Sheets API</h1>
+<nav>
+	<a routerLink="/simple" routerLinkActive="active">
+		Simple Demo</a>
+	<a routerLink="/hooks" routerLinkActive="active">
+		Hooks Demo</a>
+	<a routerLink="/longer" routerLinkActive="active">
+		Longer Demo</a>
+</nav>
+<router-outlet></router-outlet>
 
-<form (ngSubmit)="onSubmit()" #demoForm="ngForm">
-  <div class="form-group">
-    <label>Spreadsheet ID (the long text between the /d/ and the /edit/</label>
-    <input type="text" class="form-control" id="sheetId"
-           required
-           [(ngModel)]="model.sheetId" name="sheetId"
-           #sheetId="ngModel">
-  </div>
 
-  <div class="form-group">
-    <label>Range e.g. Sheet1!A1</label>
-    <input type="text" class="form-control" id="range"
-           [(ngModel)]="model.range" name="range">
-  </div>
-
-  <button type="submit" class="btn btn-success">Submit</button>
-  
-</form>
-<br>
-<pre>{{ output }}</pre>
-<p>{{ jsonData }}</p>
