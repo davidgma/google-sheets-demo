@@ -1,0 +1,11 @@
+.g-signin2 {
+    float: right;
+  }
+
+  .sign-out {
+    background-color: #4285f4;
+    color: white;
+    float: right;
+    font-size: 19px;
+  
+  }

@@ -1,5 +1,4 @@
-export class Sheet {
+export class SimpleRequest {
     public sheetId: string;
     public range: string;
-    public contents: string;
 }
