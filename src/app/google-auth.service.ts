@@ -43,4 +43,47 @@ export class GoogleAuthService {
         });
     }
 
+    public async loadClient() {
+        let p = new Promise<void>((resolve) => {
+            gapi.load("client", () => {
+                resolve();
+            },
+                (error) => {
+                    console.log("Error loading client: " 
+                    + JSON.stringify(error));
+                });
+        });
+        return p;
+    }
+
+    public async loadSheetsAPI() {
+        let p = new Promise<void>((resolve) => {
+            gapi.client.load(
+                'https://sheets.googleapis.com/$discovery/rest?version=v4')
+                .then(() => {
+                    resolve();
+                },
+                    (error) => {
+                        console.log("Error loading SheetsAPI: " 
+                        + JSON.stringify(error));
+                    });
+        });
+        return p;
+    }
+
+    public async loadDriveAPI() {
+        let p = new Promise<void>((resolve) => {
+            gapi.client.load(
+                'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest')
+                .then(() => {
+                    resolve();
+                },
+                    (error) => {
+                        console.log("Error loading DriveAPI: " 
+                        + JSON.stringify(error));
+                    });
+        });
+        return p;
+    }
+
 }
