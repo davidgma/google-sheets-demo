@@ -7,9 +7,11 @@ import { GoogleAuthService } from './google-auth.service';
 import { JsLoaderService } from './js-loader.service';
 import { SimpleComponent } from './simple/simple.component';
 import { HooksComponent } from './hooks/hooks.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SimpleRoutingModule } from './simple/simple-routing.module';
 import { HooksRoutingModule } from './hooks/hooks-routing.module';
+import { PrivacyRoutingModule } from './privacy/privacy-routing.module';
 
 @NgModule({
   imports: [
@@ -17,12 +19,14 @@ import { HooksRoutingModule } from './hooks/hooks-routing.module';
     FormsModule,
     SimpleRoutingModule,
     HooksRoutingModule,
+    PrivacyRoutingModule,
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
     SimpleComponent,
     HooksComponent,
+    PrivacyComponent,
     PageNotFoundComponent
     ],
   bootstrap: [AppComponent],

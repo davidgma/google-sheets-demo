@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 import { GoogleAuthService } from '../google-auth.service';
 
 @Component({
-    selector: 'app-hookse',
+    selector: 'app-hooks',
     templateUrl: './hooks.component.html',
     styleUrls: ['./hooks.component.css']
 })
