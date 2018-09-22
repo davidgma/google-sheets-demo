@@ -95,7 +95,7 @@ git commit -a -m "Initial sync."
 git status
 ```
 
-Then link the local git repository to the Github repository so that git knows where to write the remote one to. The path to the repository will be different for you - use the path you got earlier that ends in .git. The command `git remote rm orgin` is only needed if you are starting with the renamed clone of an existing repositary, but I doubt it does any harm to issue it anyway. The command `git remote -v` is optional but provides a check that it has worked.:
+Then link the local git repository to the Github repository so that git knows where to write the remote one to. The path to the repository will be different for you - use the path you got earlier that ends in .git. The command `git remote rm orgin` is only needed if you are starting with the renamed clone of an existing repository, but I doubt it does any harm to issue it anyway. The command `git remote -v` is optional but provides a check that it has worked.:
 ```
 git remote rm orgin
 git remote add origin https://github.com/your-github-username/google-sheets-demo.git
