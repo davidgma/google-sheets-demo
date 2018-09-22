@@ -745,7 +745,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<br>\n<p>\n    Privacy policy.\n</p>\n\n"
+module.exports = "<br>\n<h2>Privacy policy.</h2>\n<p>\nThis privacy policy is a requirement for complying with the General Data Protection Regulation.\n</p>\n<p>\nThis web application ('app') is a simple demonstration of code to access data from a user's own Google Sheets spreadsheet using Google's Sheets API.\n</p>\n<ul>\n<li>It does not use cookies.</li>\n<li>Any data, personal or otherwise, that a user accesses while using the app is not stored in any permanent way or sent anywhere. When the web page is closed, the data is no longer held anywhere other than in the original locations from which the data was retrieved.</li>\n<li>No data, personal or otherwise, is used or processed in any way other than for the demonstration.</li>\n<li>The platform hosting this app may provide analytical data on the use of the website but this will not store any personal details.</li>\n<li>This is not a commercial site, provides no commercial services, receives no monetary compensation and has no interaction with third party commercial services.</li>\n<li>The software contained in the app is free open source software issued under the MIT license. See the LICENCE file in the source code for details.</li>\n</ul>\n\n"
 
 /***/ }),
 
