@@ -95,7 +95,7 @@ module.exports = ".g-signin2 {\n    float: right;\n  }\n\n  .sign-out {\n    bac
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Demonstration of Using Google Sheets API</h1>\n<div *ngIf=\"isSignedIn\">\n\t<button class=\"sign-out\" matTooltip=\"Sign out\" (click)=\"signOut()\">Sign out\n\t</button>\n</div>\n<div [style.display]=\"googleDisplay\">\n\t<div class=\"g-signin2\" data-onsuccess=\"onSignIn\" data-theme=\"dark\">\n\t</div>\n</div>\n<nav>\n\t<a routerLink=\"/simple\" routerLinkActive=\"active\">\n\t\tSimple Demo</a>\n\t<a routerLink=\"/hooks\" routerLinkActive=\"active\">\n\t\tHooks Demo</a>\n</nav>\n<router-outlet></router-outlet>"
+module.exports = "<h1>Demonstration of Using Google Sheets API</h1>\n<div *ngIf=\"isSignedIn\">\n\t<button class=\"sign-out\" matTooltip=\"Sign out\" (click)=\"signOut()\">Sign out\n\t</button>\n</div>\n<div [style.display]=\"googleDisplay\">\n\t<div class=\"g-signin2\" data-onsuccess=\"onSignIn\" data-theme=\"dark\">\n\t</div>\n</div>\n<nav>\n\t<a routerLink=\"/simple\" routerLinkActive=\"active\">\n\t\tSimple Demo</a>\n\t<a routerLink=\"/hooks\" routerLinkActive=\"active\">\n\t\tHooks Demo</a>\n\t<a routerLink=\"/privacy\" routerLinkActive=\"active\">\n\t\tPrivacy Policy</a>\n</nav>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -227,15 +227,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_loader_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js-loader.service */ "./src/app/js-loader.service.ts");
 /* harmony import */ var _simple_simple_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./simple/simple.component */ "./src/app/simple/simple.component.ts");
 /* harmony import */ var _hooks_hooks_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./hooks/hooks.component */ "./src/app/hooks/hooks.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _simple_simple_routing_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./simple/simple-routing.module */ "./src/app/simple/simple-routing.module.ts");
-/* harmony import */ var _hooks_hooks_routing_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./hooks/hooks-routing.module */ "./src/app/hooks/hooks-routing.module.ts");
+/* harmony import */ var _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./privacy/privacy.component */ "./src/app/privacy/privacy.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _simple_simple_routing_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./simple/simple-routing.module */ "./src/app/simple/simple-routing.module.ts");
+/* harmony import */ var _hooks_hooks_routing_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./hooks/hooks-routing.module */ "./src/app/hooks/hooks-routing.module.ts");
+/* harmony import */ var _privacy_privacy_routing_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./privacy/privacy-routing.module */ "./src/app/privacy/privacy-routing.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -256,14 +260,16 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-                _simple_simple_routing_module__WEBPACK_IMPORTED_MODULE_10__["SimpleRoutingModule"],
-                _hooks_hooks_routing_module__WEBPACK_IMPORTED_MODULE_11__["HooksRoutingModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"]
+                _simple_simple_routing_module__WEBPACK_IMPORTED_MODULE_11__["SimpleRoutingModule"],
+                _hooks_hooks_routing_module__WEBPACK_IMPORTED_MODULE_12__["HooksRoutingModule"],
+                _privacy_privacy_routing_module__WEBPACK_IMPORTED_MODULE_13__["PrivacyRoutingModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_10__["AppRoutingModule"]
             ],
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                 _simple_simple_component__WEBPACK_IMPORTED_MODULE_7__["SimpleComponent"],
                 _hooks_hooks_component__WEBPACK_IMPORTED_MODULE_8__["HooksComponent"],
+                _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_9__["PrivacyComponent"],
                 _not_found_component__WEBPACK_IMPORTED_MODULE_3__["PageNotFoundComponent"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
@@ -575,7 +581,7 @@ var HooksComponent = /** @class */ (function () {
     };
     HooksComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-hookse',
+            selector: 'app-hooks',
             template: __webpack_require__(/*! ./hooks.component.html */ "./src/app/hooks/hooks.component.html"),
             styles: [__webpack_require__(/*! ./hooks.component.css */ "./src/app/hooks/hooks.component.css")]
         }),
@@ -674,6 +680,106 @@ Copyright 2017-2018 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */ 
+
+
+/***/ }),
+
+/***/ "./src/app/privacy/privacy-routing.module.ts":
+/*!***************************************************!*\
+  !*** ./src/app/privacy/privacy-routing.module.ts ***!
+  \***************************************************/
+/*! exports provided: PrivacyRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrivacyRoutingModule", function() { return PrivacyRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _privacy_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./privacy.component */ "./src/app/privacy/privacy.component.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var routes = [
+    { path: 'privacy', component: _privacy_component__WEBPACK_IMPORTED_MODULE_2__["PrivacyComponent"] }
+];
+var PrivacyRoutingModule = /** @class */ (function () {
+    function PrivacyRoutingModule() {
+    }
+    PrivacyRoutingModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes)
+            ],
+            declarations: []
+        })
+    ], PrivacyRoutingModule);
+    return PrivacyRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/privacy/privacy.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/privacy/privacy.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/privacy/privacy.component.html":
+/*!************************************************!*\
+  !*** ./src/app/privacy/privacy.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<br>\n<p>\n    Privacy policy.\n</p>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/privacy/privacy.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/privacy/privacy.component.ts ***!
+  \**********************************************/
+/*! exports provided: PrivacyComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrivacyComponent", function() { return PrivacyComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var PrivacyComponent = /** @class */ (function () {
+    function PrivacyComponent() {
+    }
+    PrivacyComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-privacy',
+            template: __webpack_require__(/*! ./privacy.component.html */ "./src/app/privacy/privacy.component.html"),
+            styles: [__webpack_require__(/*! ./privacy.component.css */ "./src/app/privacy/privacy.component.css")]
+        })
+    ], PrivacyComponent);
+    return PrivacyComponent;
+}()); // End of class PrivacyComponent
+
 
 
 /***/ }),
