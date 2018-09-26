@@ -71,19 +71,5 @@ export class GoogleAuthService {
         return p;
     }
 
-    public async loadDriveAPI() {
-        let p = new Promise<void>((resolve) => {
-            gapi.client.load(
-                'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest')
-                .then(() => {
-                    resolve();
-                },
-                    (error) => {
-                        console.log("Error loading DriveAPI: " 
-                        + JSON.stringify(error));
-                    });
-        });
-        return p;
-    }
 
 }
