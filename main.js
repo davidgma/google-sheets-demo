@@ -419,23 +419,6 @@ var GoogleAuthService = /** @class */ (function () {
             });
         });
     };
-    GoogleAuthService.prototype.loadDriveAPI = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var p;
-            return __generator(this, function (_a) {
-                p = new Promise(function (resolve) {
-                    gapi.client.load('https://www.googleapis.com/discovery/v1/apis/drive/v3/rest')
-                        .then(function () {
-                        resolve();
-                    }, function (error) {
-                        console.log("Error loading DriveAPI: "
-                            + JSON.stringify(error));
-                    });
-                });
-                return [2 /*return*/, p];
-            });
-        });
-    };
     GoogleAuthService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
