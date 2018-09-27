@@ -12,7 +12,7 @@ I hope that this will be useful to others. I found it remarkably difficult to wo
 
 ## Setting up a new project
 
-You probably won't need this part of my documentation because it's a bit basic but I thought I'd include it as I would have found it helpful when I started out. To be honest, I have included it primarily for my own benefit so that I can remember how to do it in future. If you are only interested in the API-specific bits then you can jump forward to the section [Accessing the Google Sheets Data](https://github.com/davidgma/google-sheets-demo#accessing-the-google-sheets-data).
+You probably won't need this part of my documentation because it's a bit basic but it might be helpful for those who are new to this. To be honest, I have included it primarily for my own benefit so that I can remember how to do it in future. If you are only interested in the API-specific bits then you can jump forward to the section [Accessing the Google Sheets Data](https://github.com/davidgma/google-sheets-demo#accessing-the-google-sheets-data).
 
 I will cover using Github Pages and Stackblitz. Both are free. You can choose either. In either case you will need to sign up with Github, which is free to do.   
 If you choose the Github Pages option, you'll also need a local installation of various applications, including Node, Typescript, Angular Cli, Git and VS Code, all of which are free. These local installations are just for writing the code - once the app is written and uploaded they are no longer needed (until you want to make changes).
