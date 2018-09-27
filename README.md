@@ -1,6 +1,6 @@
 # Google Sheets Demo
 
-This is a demonstration of how to build a web app to access private unpublished data in Google Docs spreadsheets where the user of the web app is authorised to view the private data (e.g. it is their own data).
+This is a demonstration of how to build a web app where the user of the web app accesses their own data from their own Google spreadsheet.
 
 It uses OAuth 2.0 and a Google project key but it does not use or need the secret key or an API key. Furthermore, the app can run wholly on the client side - it has no need for node, access to the local file system or any other backend. It can be run on Stackblitz, Github Pages or, in theory, any static web server.
 
