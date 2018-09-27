@@ -224,7 +224,10 @@ export class JsLoaderService {
   }
 }
 ```
-In line with the Google documentation, you also need 2 meta tags in the head section of the index.html file. You don't need to put the script tag in there because it doesn't work and it's dealt with later using the service above. And you don't need the div tag yet - that goes in a component.
+
+This is loaded by google-auth.service.ts.  
+
+In line with the Google documentation, you also need 2 meta tags in the head section of the index.html file. You don't need to put the script tag in there because it doesn't work and it's dealt with using the service above. And you don't need the div tag yet - that goes in a component.
 
 ```html
   <meta name="google-signin-scope" 
@@ -305,12 +308,28 @@ The next step, as documented in the [Google Sign-In for Websites](https://develo
 ```
 
 The Google sign-in button still won't appear because we haven't called the code to load the platform.js file. I've put this in the google-auth.service.ts file in the constructor.  
+
+```typescript
+    public javascriptFile = "https://apis.google.com/js/platform.js";
+    
+    ...
+
+    constructor(public loader: JsLoaderService) {
+
+        console.log("Loading the javascript API file.");
+        this.loader.loadjs(this.javascriptFile).then(() => {
+            // file loaded
+        });
+    }
+
+```
+
 Also I've put in a declare global statement to avoid compile errors with the gapi type. I did try importing a proper .d.ts definition file but this didn't go well. I tried all sorts of approaches and none worked either because the file I got was out-of-date or had node dependencies which weren't available in a browser-only context. There are so few gapi commands needed that I ended up just ignoring types for it and using the debug facilities in VS Code when I wanted to see what methods and properties were actually available in practice. If you wanted to do it properly with a d.ts file you certainly could try.
 
 In the app.component.ts file I've put in a signOut method that's referenced in the template.  
   
 
-At this point you should see the Google Sign-In button and it should be able to sign you in. You may some messages about the app not being safe - but to use the demo you need to go ahead and say that you trust it. You can review my code to see whether you can see anything suspicious in it or build your own code that you trust based on my demo.  
+At this point you should see the Google Sign-In button and it should be able to sign you in. You may some messages about the app not being safe - but to use the demo you need to go ahead and say that you trust it. You can review my code to see whether you can see anything suspicious in it or build your own code that you trust based on my demo.   
 Notice that we haven't hooked up to the 'onSignIn' function that is referenced in the 'g-signin2' div in the template. It's easy to do this and it gives you access to various bits of information such as the user name, email address and id_token. I've shown how to do this under the Hooks section but it isn't actually needed, strangely enough, to be able to access the spreadsheets once the user has granted permissions via the Google Sign-In button. All the Google documentation I could find on how to do what I'm demonstrating here has code to pass in the API key and an authorisation token into the API functions, but it actually works perfectly well without doing either, and other parts of the documentation say you aren't supposed to put the API key in client code. I can only assume that the OAuth code that is called when you sign in and authorise the app writes the authorisation tokens to a place where the Sheets API can find it.
 
 The last step is to retrieve something from a Google Docs spreadsheet. If you use the debugger to see what variables are available at this point, you will find that there is a global gapi object (created by loading the platform.js file) that has a load method amongst other things but no client object under the gapi object. So you need to bring it it using the command found in the Google API documentation `gapi.load('client',`:
