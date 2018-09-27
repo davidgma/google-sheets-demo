@@ -19,7 +19,7 @@ If you choose the Github Pages option, you'll also need a local installation of 
 
 ### Option 1 - Setting up a new Github Pages project.
 
-As noted above, you need to first install the following software, all of which is free, on your computer, if it is not already installed. Please follow the guidance they each provide on how to do the installations:
+As noted above, you need to first install the following software on your computer, all of which is free, if it is not already installed. Please follow the guidance they each provide on how to do the installations:
 
 [Node](https://nodejs.org)  
 [Typescript](https://www.typescriptlang.org)  
@@ -53,7 +53,7 @@ Now go into a command prompt on your local machine. I use Linux so there will be
 Navigate to a directory that is just above where you want the new code to be:  
 `cd ~/local/dev`
 
-If you want to start with a clone of my demo, then instead issue the commands:
+If you want to start with a clone of my demo, then issue the commands:
 ```
 git clone https://github.com/davidgma/google-sheets-demo.git
 cd google-sheets-demo
@@ -102,7 +102,7 @@ git remote add origin https://github.com/your-github-username/google-sheets-demo
 git remote -v
 ```
 
-Then push all the default files that the Angular Cli has just created onto the remote Github repository. I'm not sure whether both the following commands are actually needed. Maybe only the second but it does no harm to issue them both. 
+Then push all the default files that the Angular Cli has just created (or the cloned files if you started that way) onto the new remote Github repository. I'm not sure whether both the following commands are actually needed. Maybe only the second but it does no harm to issue them both. 
 
 ```
 git push origin master
@@ -132,7 +132,7 @@ Then, under settings, the Github Pages source should be set to gh-pages branch. 
 ![Source setting in Github](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/07_ghpages.png "Set the Github Pages source to gh-pages branch")
 
 
-You should now be able to view the default app created by the Angular Cli in Github Pages. It will tell you the address to use under the Github Pages setting in the settings page and it will probably be in the following format:  
+You should now be able to view the default app created by the Angular Cli (or the app you cloned) in Github Pages. It will tell you the address to use under the Github Pages setting in the settings page and it will probably be in the following format:  
 https://your-github-username.github.io/your-project-name/
 
 ![The default app in Github Pages](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/08_default_app.png "The default app served by Github pages")
