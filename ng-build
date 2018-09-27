@@ -12,7 +12,8 @@ else
 	message="Upload changes."
 fi
 
-echo $message#ng build --base-href "https://davidgma.github.io/google-sheets-demo/"
+echo $message
+ng build --base-href "https://davidgma.github.io/google-sheets-demo/"
 git add *
 git commit -a -m "${message}"
 git push
