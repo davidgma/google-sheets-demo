@@ -146,6 +146,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var appRoutes = [
+    { path: 'privacy', redirectTo: 'privacy.html' },
     { path: '', redirectTo: '', pathMatch: 'full' },
     { path: '**', component: _not_found_component__WEBPACK_IMPORTED_MODULE_2__["PageNotFoundComponent"] }
 ];
