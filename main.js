@@ -23,106 +23,6 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "./src/app/about/about-routing.module.ts":
-/*!***********************************************!*\
-  !*** ./src/app/about/about-routing.module.ts ***!
-  \***********************************************/
-/*! exports provided: AboutRoutingModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutRoutingModule", function() { return AboutRoutingModule; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _about_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./about.component */ "./src/app/about/about.component.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var routes = [
-    { path: 'about', component: _about_component__WEBPACK_IMPORTED_MODULE_2__["AboutComponent"] }
-];
-var AboutRoutingModule = /** @class */ (function () {
-    function AboutRoutingModule() {
-    }
-    AboutRoutingModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            imports: [
-                _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes)
-            ],
-            declarations: []
-        })
-    ], AboutRoutingModule);
-    return AboutRoutingModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/about/about.component.css":
-/*!*******************************************!*\
-  !*** ./src/app/about/about.component.css ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/about/about.component.html":
-/*!********************************************!*\
-  !*** ./src/app/about/about.component.html ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<br>\n<p>This is a simple demonstration of how to write Angular Typescript code to use the Google Sheets API. I wrote it because when I came to work out how to do this I found a lack of a good examples elsewhere.</p> \n<p>It's actually very simple to do - you don't need to use a secret key or an API key or pass authorisation tokens about in your code. Google's OAuth and API code handle all that for you seemlessly. This contrasts with Google's own documentation which, at the time of writing, only had examples that did pass an API key and an authorisation token in the code even though the same documentation says you shouldn't put an API key in browser code and even though it works without passing an authorisation token around in the code. I am unduly stupid though so perhaps I was missing something.</p>\n<p>The underlying code for this demonstration is free open source software issued under the MIT license and can be found on Github at <a href=\"https://github.com/davidgma/google-sheets-demo\">https://github.com/davidgma/google-sheets-demo</a>. That site also contains a readme file with information about some of the notable aspects of the code that I hope you will find helpful if you want to re-use the code in your own app.</p>\n<p>I have also put the same code into a Stackblitz demo in case you like to tinker. This is at <a href=\"https://stackblitz.com/edit/google-sheets-demo\">https://stackblitz.com/edit/google-sheets-demo</a></p>\n<p>My name is David Ma and I'm the oldest, fattest and most foolish man in the world.</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/about/about.component.ts":
-/*!******************************************!*\
-  !*** ./src/app/about/about.component.ts ***!
-  \******************************************/
-/*! exports provided: AboutComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutComponent", function() { return AboutComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var AboutComponent = /** @class */ (function () {
-    function AboutComponent() {
-    }
-    AboutComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-about',
-            template: __webpack_require__(/*! ./about.component.html */ "./src/app/about/about.component.html"),
-            styles: [__webpack_require__(/*! ./about.component.css */ "./src/app/about/about.component.css")]
-        })
-    ], AboutComponent);
-    return AboutComponent;
-}()); // End of class AboutComponent
-
-
-
-/***/ }),
-
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -195,7 +95,7 @@ module.exports = ".g-signin2 {\n    float: right;\n  }\n\n  .sign-out {\n    bac
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Demonstration of Using Google Sheets API</h1>\n<div *ngIf=\"isSignedIn\">\n\t<button class=\"sign-out\" matTooltip=\"Sign out\" (click)=\"signOut()\">Sign out\n\t</button>\n</div>\n<div [style.display]=\"googleDisplay\">\n\t<div class=\"g-signin2\" data-onsuccess=\"onSignIn\" data-theme=\"dark\">\n\t</div>\n</div>\n<nav>\n\t<a routerLink=\"/simple\" routerLinkActive=\"active\">\n\t\tSimple Demo</a>\n\t<a routerLink=\"/hooks\" routerLinkActive=\"active\">\n\t\tHooks Demo</a>\n\t<a routerLink=\"/privacy\" routerLinkActive=\"active\">\n\t\tPrivacy Policy</a>\n\t<a routerLink=\"/about\" routerLinkActive=\"active\">\n\t\tAbout</a>\n</nav>\n<router-outlet></router-outlet>"
+module.exports = "<h1>Demonstration of Using Google Sheets API</h1>\n<div *ngIf=\"isSignedIn\">\n\t<button class=\"sign-out\" matTooltip=\"Sign out\" (click)=\"signOut()\">Sign out\n\t</button>\n</div>\n<div [style.display]=\"googleDisplay\">\n\t<div class=\"g-signin2\" data-onsuccess=\"onSignIn\" data-theme=\"dark\">\n\t</div>\n</div>\n<nav>\n\t<a routerLink=\"/simple\" routerLinkActive=\"active\">\n\t\tSimple Demo</a>\n\t<a routerLink=\"/hooks\" routerLinkActive=\"active\">\n\t\tHooks Demo</a>\n\t<a routerLink=\"/privacy\" routerLinkActive=\"active\">\n\t\tPrivacy Policy</a>\n</nav>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -235,8 +135,8 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -327,21 +227,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_loader_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js-loader.service */ "./src/app/js-loader.service.ts");
 /* harmony import */ var _simple_simple_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./simple/simple.component */ "./src/app/simple/simple.component.ts");
 /* harmony import */ var _hooks_hooks_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./hooks/hooks.component */ "./src/app/hooks/hooks.component.ts");
-/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
-/* harmony import */ var _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./privacy/privacy.component */ "./src/app/privacy/privacy.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _simple_simple_routing_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./simple/simple-routing.module */ "./src/app/simple/simple-routing.module.ts");
-/* harmony import */ var _hooks_hooks_routing_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./hooks/hooks-routing.module */ "./src/app/hooks/hooks-routing.module.ts");
-/* harmony import */ var _about_about_routing_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./about/about-routing.module */ "./src/app/about/about-routing.module.ts");
-/* harmony import */ var _privacy_privacy_routing_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./privacy/privacy-routing.module */ "./src/app/privacy/privacy-routing.module.ts");
+/* harmony import */ var _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./privacy/privacy.component */ "./src/app/privacy/privacy.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _simple_simple_routing_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./simple/simple-routing.module */ "./src/app/simple/simple-routing.module.ts");
+/* harmony import */ var _hooks_hooks_routing_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./hooks/hooks-routing.module */ "./src/app/hooks/hooks-routing.module.ts");
+/* harmony import */ var _privacy_privacy_routing_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./privacy/privacy-routing.module */ "./src/app/privacy/privacy-routing.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
 
 
 
@@ -364,18 +260,16 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-                _simple_simple_routing_module__WEBPACK_IMPORTED_MODULE_12__["SimpleRoutingModule"],
-                _hooks_hooks_routing_module__WEBPACK_IMPORTED_MODULE_13__["HooksRoutingModule"],
-                _privacy_privacy_routing_module__WEBPACK_IMPORTED_MODULE_15__["PrivacyRoutingModule"],
-                _about_about_routing_module__WEBPACK_IMPORTED_MODULE_14__["AboutRoutingModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_11__["AppRoutingModule"]
+                _simple_simple_routing_module__WEBPACK_IMPORTED_MODULE_11__["SimpleRoutingModule"],
+                _hooks_hooks_routing_module__WEBPACK_IMPORTED_MODULE_12__["HooksRoutingModule"],
+                _privacy_privacy_routing_module__WEBPACK_IMPORTED_MODULE_13__["PrivacyRoutingModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_10__["AppRoutingModule"]
             ],
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                 _simple_simple_component__WEBPACK_IMPORTED_MODULE_7__["SimpleComponent"],
                 _hooks_hooks_component__WEBPACK_IMPORTED_MODULE_8__["HooksComponent"],
-                _about_about_component__WEBPACK_IMPORTED_MODULE_9__["AboutComponent"],
-                _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_10__["PrivacyComponent"],
+                _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_9__["PrivacyComponent"],
                 _not_found_component__WEBPACK_IMPORTED_MODULE_3__["PageNotFoundComponent"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
@@ -428,8 +322,8 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -472,8 +366,8 @@ var GoogleAuthService = /** @class */ (function () {
     };
     GoogleAuthService.prototype.signOut = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var auth2;
             var _this = this;
+            var auth2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -995,8 +889,8 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
