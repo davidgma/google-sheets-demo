@@ -328,6 +328,10 @@ Also I've put in a declare global statement to avoid compile errors with the gap
 
 In the app.component.ts file I've put in a signOut method that's referenced in the template.  
   
+You also need to check at this point that you have enabled third-party cookies as Google's OAuth needs to write cookie data for your authorisation. This is part of the seamless way that it handles the access. The setting in Chrome is under Settings, Advanced, Content Settings, Cookies, Block third-party cookies. This should be off so that third-party cookies are allowed.
+
+![Third-party cookies allowed](https://github.com/davidgma/google-sheets-demo/raw/master/screenshots/20_third_party_cookies.png "Third-party cookies allowed")
+
 
 At this point you should see the Google Sign-In button and it should be able to sign you in. You may some messages about the app not being safe - but to use the demo you need to go ahead and say that you trust it. You can review my code to see whether you can see anything suspicious in it or build your own code that you trust based on my demo.   
 Notice that we haven't hooked up to the 'onSignIn' function that is referenced in the 'g-signin2' div in the template. It's easy to do this and it gives you access to various bits of information such as the user name, email address and id_token. I've shown how to do this under the Hooks section but it isn't actually needed, strangely enough, to be able to access the spreadsheets once the user has granted permissions via the Google Sign-In button. All the Google documentation I could find on how to do what I'm demonstrating here has code to pass in the API key and an authorisation token into the API functions, but it actually works perfectly well without doing either, and other parts of the documentation say you aren't supposed to put the API key in client code. I can only assume that the OAuth code that is called when you sign in and authorise the app writes the authorisation tokens to a place where the Sheets API can find it.
