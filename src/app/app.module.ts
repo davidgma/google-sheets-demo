@@ -8,12 +8,10 @@ import { JsLoaderService } from './js-loader.service';
 import { SimpleComponent } from './simple/simple.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { AboutComponent } from './about/about.component';
-import { PrivacyComponent } from './privacy/privacy.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SimpleRoutingModule } from './simple/simple-routing.module';
 import { HooksRoutingModule } from './hooks/hooks-routing.module';
 import { AboutRoutingModule } from './about/about-routing.module';
-import { PrivacyRoutingModule } from './privacy/privacy-routing.module';
 
 @NgModule({
   imports: [
@@ -21,7 +19,6 @@ import { PrivacyRoutingModule } from './privacy/privacy-routing.module';
     FormsModule,
     SimpleRoutingModule,
     HooksRoutingModule,
-    PrivacyRoutingModule,
     AboutRoutingModule,
     AppRoutingModule
   ],
@@ -30,7 +27,6 @@ import { PrivacyRoutingModule } from './privacy/privacy-routing.module';
     SimpleComponent,
     HooksComponent,
     AboutComponent,
-    PrivacyComponent,
     PageNotFoundComponent
     ],
   bootstrap: [AppComponent],
