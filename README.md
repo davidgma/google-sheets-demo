@@ -4,7 +4,7 @@ This is a demonstration of how to build a web app where the user of the web app 
 
 You can try the demonstration at [https://davidgma.github.io/google-sheets-demo/](https://davidgma.github.io/google-sheets-demo/)
 
-If you like to tinker, you can also see the demo at [https://stackblitz.com/edit/google-sheets-demo](https://stackblitz.com/edit/google-sheets-demo)
+If you like to tinker, you can also see the demonstration at [https://stackblitz.com/edit/google-sheets-demo](https://stackblitz.com/edit/google-sheets-demo)
 
 It uses OAuth 2.0 and a Google project key but it does not use or need the secret key or an API key. Furthermore, the app can run wholly on the client side - it has no need for node, access to the local file system or any other backend. It can be run on Stackblitz, Github Pages or, in theory, any static web server.
 
