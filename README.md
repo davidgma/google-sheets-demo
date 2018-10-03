@@ -364,7 +364,7 @@ gapi.client.sheets.spreadsheets.values.get({
   }
 ```
 
-Note again that you didn't need to do anything whatsoever with any session id, auth key, secret key or api key, despite what you might think from reading the Google documentation. It seems that the gapi OAuth and api code work together to handle that all for you seemlessly. So it's actually remarkably easy to use once you know how and I think Google have done an amazing job in making it so easy. I just wish they would change their documentation to show this. Hopefully they will in due course. In the mean time, I hope that this proves helpful for you.
+Note again that you didn't need to do anything whatsoever with any session id, auth key, secret key or api key. It seems that the gapi OAuth and api code work together to handle that all for you seamlessly. So it's actually remarkably easy to use once you know how and I think Google have done an amazing job in making it so easy. I just wish they would change their documentation to show this. Hopefully they will in due course. In the mean time, I hope that this proves helpful for you.
 
 
 
