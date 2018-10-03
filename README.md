@@ -198,7 +198,7 @@ This is a script to put in the head section of the web page.
 
 The second hurdle to overcome is to get this script to actually load with Angular. You know whether it has loaded or not because if it does, a little Google button appears to let you sign in to the app and if it doesn't, the button doesn't appear at all. I tried a lot of things, mainly in Stackblitz, to get it to load but without success. I put the script tag in the head section of the index.html file per the Google example but it didn't load. I tried putting it in the external dependencies; it still didn't load. I tried putting it it the angular.json file. Nope. I tried taking out the `async defer` but the whole thing just hung. I think I may have tried some other things but I can't remember them all. In the end, I found a way of loading it that works perfectly and even gives you a hook into the event that is fired when it has loaded. I'm grateful to someone named [Ruben](https://github.com/rubenCodeforges) for the guidance on how to do it.
 
-To make it more re-usable, I have a service that loads an API asynchronously and returns a Promise. It is in the service js-loader.service.ts:
+To make it more re-usable, I have a service that loads a javascript file asynchronously and returns a Promise. It is in the service js-loader.service.ts:
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -229,7 +229,7 @@ export class JsLoaderService {
 }
 ```
 
-This is loaded by google-auth.service.ts.  
+This is called by google-auth.service.ts.  
 
 In line with the Google documentation, you also need 2 meta tags in the head section of the index.html file. You don't need to put the script tag in there because it doesn't work and it's dealt with using the service above. And you don't need the div tag yet - that goes in a component.
 
@@ -239,7 +239,7 @@ In line with the Google documentation, you also need 2 meta tags in the head sec
   <meta name="google-signin-client_id" content=
   "555978706374-qiqi420bj425if9iostbf483l4qj75he.apps.googleusercontent.com">
 ```
-The Google documentation has just the scopes profile and email, but as we also want authorisation to view a user's spreadsheets, we also need to put in the spreadsheet scope as shown above. If you are wondering what other scopes you could put it, they are listed [here](https://developers.google.com/identity/protocols/googlescopes).  
+The Google documentation has just the scopes profile and email, but as we also want authorisation to view a user's spreadsheets, we also need to put in the spreadsheet scope as shown above. If you are wondering what other scopes you could put in, they are listed [here](https://developers.google.com/identity/protocols/googlescopes).  
 If you want to write to the spreadsheet you'd need the one without the '.readonly' at the end or the more powerful drive scope.
 
 The client id I have above (the string starting 555978) is my own one (now deleted). It's changed since I wrote this and you can see the new one in the index.html file. You can use it (the new one) for trying out my demo but as I have restricted it to certain domains, you will need to get your own one if you want to develop your own app. Getting a client id is free to do and easyish and is documented to some extent on the [Google Sign-In for Websites](https://developers.google.com/identity/sign-in/web/sign-in) pages. But I'll go over it in more detail here because it doesn't cover the sheets API part and isn't that clear anyway. These are the steps to take:

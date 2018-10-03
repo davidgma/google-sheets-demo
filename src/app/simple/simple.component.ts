@@ -15,7 +15,8 @@ export class SimpleComponent implements OnInit {
 
   constructor(private cd: ChangeDetectorRef,
     public gauth: GoogleAuthService) {
-    this.output = "Enter a spreadsheet id and range then press submit";
+    this.output = "Enter a spreadsheet id and range then press submit. "
+    + "Ensure that third-party cookies are enabled in your browser settings.";
   }
 
   ngOnInit() { }
