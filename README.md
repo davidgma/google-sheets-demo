@@ -1,4 +1,4 @@
-# Google Sheets Demo
+# Google Sheets API Demo
 
 This is a demonstration of how to build a web app where the user of the web app accesses their own data from their own Google spreadsheet.
 
