@@ -1,5 +1,49 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/about/about.component.html":
+/*!**********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/about/about.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<br>\n<p>This is a simple demonstration of how to write Angular Typescript code to use the Google Sheets API. I wrote it because when I came to work out how to do this I found a lack of a good examples elsewhere.</p> \n<p>It's actually very simple to do - you don't need to use a secret key or an API key or pass authorisation tokens about in your code. Google's OAuth and API code handle all that for you seamlessly. This contrasts with Google's own documentation which, at the time of writing, only had examples that did pass an API key and an authorisation token in the code even though the same documentation says you shouldn't put an API key in browser code and even though it works without passing an authorisation token around in the code. I am unduly stupid though so perhaps I was missing something.</p>\n<p>The underlying code for this demonstration is free open source software issued under the MIT license and can be found on Github at <a href=\"https://github.com/davidgma/google-sheets-demo\">https://github.com/davidgma/google-sheets-demo</a>. That site also contains a readme file with information about some of the notable aspects of the code that I hope you will find helpful if you want to re-use the code in your own app.</p>\n<p>I have also put the same code into a Stackblitz demo in case you like to tinker. This is at <a href=\"https://stackblitz.com/edit/google-sheets-demo\">https://stackblitz.com/edit/google-sheets-demo</a></p>\n<p>Note that you need to enable third-party cookies in your browser settings as Google's OAuth needs them.</p>\n<p>My name is David Ma and I'm the oldest, fattest and most foolish man in the world.</p>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/app.component.html":
+/*!**************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/app.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Demonstration of Using Google Sheets API</h1>\n<div *ngIf=\"isSignedIn\">\n\t<button class=\"sign-out\" matTooltip=\"Sign out\" (click)=\"signOut()\">Sign out\n\t</button>\n</div>\n<div [style.display]=\"googleDisplay\">\n\t<div class=\"g-signin2\" data-onsuccess=\"onSignIn\" data-theme=\"dark\">\n\t</div>\n</div>\n<nav>\n\t<a routerLink=\"/simple\" routerLinkActive=\"active\">\n\t\tSimple Demo</a>\n\t<a routerLink=\"/hooks\" routerLinkActive=\"active\">\n\t\tHooks Demo</a>\n\t<a routerLink=\"/about\" routerLinkActive=\"active\">\n\t\tAbout</a>\n</nav>\n<router-outlet></router-outlet>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/hooks/hooks.component.html":
+/*!**********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/hooks/hooks.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<br>\n<section *ngFor=\"let line of output\">\n    {{ line }}\n</section>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/simple/simple.component.html":
+/*!************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/simple/simple.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<br>\n<form (ngSubmit)=\"onSubmit()\" #demoForm=\"ngForm\">\n\t<div class=\"form-group\">\n\t\t<label>Spreadsheet ID (the long text between the /d/ and the /edit/ in the address)</label>\n\t\t<input type=\"text\" class=\"form-control\" id=\"sheetId\" required [(ngModel)]=\"model.sheetId\" name=\"sheetId\" #sheetId=\"ngModel\">\n\t</div>\n\n\t<div class=\"form-group\">\n\t\t<label>Range e.g. Sheet1!A1:C</label>\n\t\t<input type=\"text\" class=\"form-control\" id=\"range\" [(ngModel)]=\"model.range\" name=\"range\">\n\t</div>\n\n\t<button type=\"submit\" class=\"btn btn-success\">Submit</button>\n\n</form>\n<br>\n<pre>{{ output }}</pre>\n"
+
+/***/ }),
+
 /***/ "./src/$$_lazy_route_resource lazy recursive":
 /*!**********************************************************!*\
   !*** ./src/$$_lazy_route_resource lazy namespace object ***!
@@ -73,18 +117,7 @@ var AboutRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/about/about.component.html":
-/*!********************************************!*\
-  !*** ./src/app/about/about.component.html ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<br>\n<p>This is a simple demonstration of how to write Angular Typescript code to use the Google Sheets API. I wrote it because when I came to work out how to do this I found a lack of a good examples elsewhere.</p> \n<p>It's actually very simple to do - you don't need to use a secret key or an API key or pass authorisation tokens about in your code. Google's OAuth and API code handle all that for you seamlessly. This contrasts with Google's own documentation which, at the time of writing, only had examples that did pass an API key and an authorisation token in the code even though the same documentation says you shouldn't put an API key in browser code and even though it works without passing an authorisation token around in the code. I am unduly stupid though so perhaps I was missing something.</p>\n<p>The underlying code for this demonstration is free open source software issued under the MIT license and can be found on Github at <a href=\"https://github.com/davidgma/google-sheets-demo\">https://github.com/davidgma/google-sheets-demo</a>. That site also contains a readme file with information about some of the notable aspects of the code that I hope you will find helpful if you want to re-use the code in your own app.</p>\n<p>I have also put the same code into a Stackblitz demo in case you like to tinker. This is at <a href=\"https://stackblitz.com/edit/google-sheets-demo\">https://stackblitz.com/edit/google-sheets-demo</a></p>\n<p>Note that you need to enable third-party cookies in your browser settings as Google's OAuth needs them.</p>\n<p>My name is David Ma and I'm the oldest, fattest and most foolish man in the world.</p>\n"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Fib3V0L2Fib3V0LmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -112,7 +145,7 @@ var AboutComponent = /** @class */ (function () {
     AboutComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-about',
-            template: __webpack_require__(/*! ./about.component.html */ "./src/app/about/about.component.html"),
+            template: __webpack_require__(/*! raw-loader!./about.component.html */ "./node_modules/raw-loader/index.js!./src/app/about/about.component.html"),
             styles: [__webpack_require__(/*! ./about.component.css */ "./src/app/about/about.component.css")]
         })
     ], AboutComponent);
@@ -185,18 +218,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".g-signin2 {\n    float: right;\n  }\n\n  .sign-out {\n    background-color: #4285f4;\n    color: white;\n    float: right;\n    font-size: 19px;\n  \n  }"
-
-/***/ }),
-
-/***/ "./src/app/app.component.html":
-/*!************************************!*\
-  !*** ./src/app/app.component.html ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Demonstration of Using Google Sheets API</h1>\n<div *ngIf=\"isSignedIn\">\n\t<button class=\"sign-out\" matTooltip=\"Sign out\" (click)=\"signOut()\">Sign out\n\t</button>\n</div>\n<div [style.display]=\"googleDisplay\">\n\t<div class=\"g-signin2\" data-onsuccess=\"onSignIn\" data-theme=\"dark\">\n\t</div>\n</div>\n<nav>\n\t<a routerLink=\"/simple\" routerLinkActive=\"active\">\n\t\tSimple Demo</a>\n\t<a routerLink=\"/hooks\" routerLinkActive=\"active\">\n\t\tHooks Demo</a>\n\t<a routerLink=\"/about\" routerLinkActive=\"active\">\n\t\tAbout</a>\n</nav>\n<router-outlet></router-outlet>"
+module.exports = ".g-signin2 {\n    float: right;\n  }\n\n  .sign-out {\n    background-color: #4285f4;\n    color: white;\n    float: right;\n    font-size: 19px;\n  \n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0VBQ2Q7O0VBRUE7SUFDRSx5QkFBeUI7SUFDekIsWUFBWTtJQUNaLFlBQVk7SUFDWixlQUFlOztFQUVqQiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmctc2lnbmluMiB7XG4gICAgZmxvYXQ6IHJpZ2h0O1xuICB9XG5cbiAgLnNpZ24tb3V0IHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDI4NWY0O1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBmbG9hdDogcmlnaHQ7XG4gICAgZm9udC1zaXplOiAxOXB4O1xuICBcbiAgfSJdfQ== */"
 
 /***/ }),
 
@@ -236,8 +258,8 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -296,7 +318,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
-            template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
+            template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
         __metadata("design:paramtypes", [_google_auth_service__WEBPACK_IMPORTED_MODULE_1__["GoogleAuthService"],
@@ -423,8 +445,8 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -467,8 +489,8 @@ var GoogleAuthService = /** @class */ (function () {
     };
     GoogleAuthService.prototype.signOut = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
             var auth2;
+            var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -583,18 +605,7 @@ var HooksRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/hooks/hooks.component.html":
-/*!********************************************!*\
-  !*** ./src/app/hooks/hooks.component.html ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<br>\n<section *ngFor=\"let line of output\">\n    {{ line }}\n</section>\n"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvb2tzL2hvb2tzLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -666,7 +677,7 @@ var HooksComponent = /** @class */ (function () {
     HooksComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-hooks',
-            template: __webpack_require__(/*! ./hooks.component.html */ "./src/app/hooks/hooks.component.html"),
+            template: __webpack_require__(/*! raw-loader!./hooks.component.html */ "./node_modules/raw-loader/index.js!./src/app/hooks/hooks.component.html"),
             styles: [__webpack_require__(/*! ./hooks.component.css */ "./src/app/hooks/hooks.component.css")]
         }),
         __metadata("design:paramtypes", [_google_auth_service__WEBPACK_IMPORTED_MODULE_1__["GoogleAuthService"]])
@@ -838,18 +849,7 @@ var SimpleRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n  \n "
-
-/***/ }),
-
-/***/ "./src/app/simple/simple.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/simple/simple.component.html ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<br>\n<form (ngSubmit)=\"onSubmit()\" #demoForm=\"ngForm\">\n\t<div class=\"form-group\">\n\t\t<label>Spreadsheet ID (the long text between the /d/ and the /edit/ in the address)</label>\n\t\t<input type=\"text\" class=\"form-control\" id=\"sheetId\" required [(ngModel)]=\"model.sheetId\" name=\"sheetId\" #sheetId=\"ngModel\">\n\t</div>\n\n\t<div class=\"form-group\">\n\t\t<label>Range e.g. Sheet1!A1:C</label>\n\t\t<input type=\"text\" class=\"form-control\" id=\"range\" [(ngModel)]=\"model.range\" name=\"range\">\n\t</div>\n\n\t<button type=\"submit\" class=\"btn btn-success\">Submit</button>\n\n</form>\n<br>\n<pre>{{ output }}</pre>\n"
+module.exports = "\n  \n \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NpbXBsZS9zaW1wbGUuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -890,8 +890,8 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -964,7 +964,7 @@ var SimpleComponent = /** @class */ (function () {
     SimpleComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-simple',
-            template: __webpack_require__(/*! ./simple.component.html */ "./src/app/simple/simple.component.html"),
+            template: __webpack_require__(/*! raw-loader!./simple.component.html */ "./node_modules/raw-loader/index.js!./src/app/simple/simple.component.html"),
             styles: [__webpack_require__(/*! ./simple.component.css */ "./src/app/simple/simple.component.css")]
         }),
         __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"],
