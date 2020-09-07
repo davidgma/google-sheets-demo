@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if [ $# -gt 0 ]; then
+	message=$*
+else
+	message="Upload changes."
+fi
+
+# Send master files to github
+git checkout master
+git add *
+git commit -a -m "${message}"
+git push origin master
+
+# Update github pages
+echo Updating github pages...
+echo checkout gh-pages
+git checkout gh-pages
+echo "Contents of gh-pages' version of the directory:"
+ls -a
+echo "Current branch:"
+git branch
+cp -r ./dist/* .
+git add *
+git commit -a -m "${message}"
+git push origin gh-pages
+
+git checkout master
+
+# to update all versions:
+# npx npm-check-updates -u
+# https://www.carlrippon.com/upgrading-npm-dependencies/
