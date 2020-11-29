@@ -107,7 +107,7 @@ module.exports = __webpack_require__(/*! /home/david/local/dev/google-sheets-dem
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Fib3V0L2Fib3V0LmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhYm91dC5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -172,7 +172,7 @@ var AboutComponent = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".g-signin2 {\n    float: right;\n  }\n\n  .sign-out {\n    background-color: #4285f4;\n    color: white;\n    float: right;\n    font-size: 19px;\n  \n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0VBQ2Q7O0VBRUE7SUFDRSx5QkFBeUI7SUFDekIsWUFBWTtJQUNaLFlBQVk7SUFDWixlQUFlOztFQUVqQiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmctc2lnbmluMiB7XG4gICAgZmxvYXQ6IHJpZ2h0O1xuICB9XG5cbiAgLnNpZ24tb3V0IHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDI4NWY0O1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBmbG9hdDogcmlnaHQ7XG4gICAgZm9udC1zaXplOiAxOXB4O1xuICBcbiAgfSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".g-signin2 {\n    float: right;\n  }\n\n  .sign-out {\n    background-color: #4285f4;\n    color: white;\n    float: right;\n    font-size: 19px;\n  \n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtFQUNkOztFQUVBO0lBQ0UseUJBQXlCO0lBQ3pCLFlBQVk7SUFDWixZQUFZO0lBQ1osZUFBZTs7RUFFakIiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZy1zaWduaW4yIHtcbiAgICBmbG9hdDogcmlnaHQ7XG4gIH1cblxuICAuc2lnbi1vdXQge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM0Mjg1ZjQ7XG4gICAgY29sb3I6IHdoaXRlO1xuICAgIGZsb2F0OiByaWdodDtcbiAgICBmb250LXNpemU6IDE5cHg7XG4gIFxuICB9Il19 */");
 
 /***/ }),
 
@@ -312,7 +312,7 @@ var HooksComponent = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvb2tzL2hvb2tzLmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJob29rcy5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -392,6 +392,7 @@ var GoogleAuthService = /** @class */ (function () {
     function GoogleAuthService(loader) {
         this.loader = loader;
         this.javascriptFile = "https://apis.google.com/js/platform.js";
+        //public javascriptFile = "https://apis.google.com/js/api.js";
         this.isSignedIn = false;
         this.googleDisplay = "block";
         this.signIn = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
@@ -936,7 +937,8 @@ var JsLoaderService = /** @class */ (function () {
             var node = document.createElement('script');
             node.src = url;
             node.type = 'text/javascript';
-            node.charset = 'utf-8';
+            // console.log("node: " + node.outerHTML);
+            // node.charset = 'utf-8';
             document.getElementsByTagName('head')[0]
                 .appendChild(node);
             node.onload = function () {
@@ -969,7 +971,7 @@ var JsLoaderService = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n  \n \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NpbXBsZS9zaW1wbGUuY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n  \n \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzaW1wbGUuY29tcG9uZW50LmNzcyJ9 */");
 
 /***/ }),
 
