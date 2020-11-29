@@ -2,7 +2,7 @@
 
 This is a demonstration of how to build a web app where the user of the web app accesses their own data from their own Google spreadsheet.
 
-You can try the demonstration at [https://davidgma.github.io/google-sheets-demo/](https://davidgma.github.io/google-sheets-demo/)
+You can try the demonstration at [https://davidgma.github.io/google-sheets-demo/](https://davidgma.github.io/google-sheets-demo/). **Make sure that you turn off your adblock or it won't work (there are no ads on the site anyway).**
 
 If you like to tinker, you can also see the demonstration at [https://stackblitz.com/edit/google-sheets-demo](https://stackblitz.com/edit/google-sheets-demo)
 
