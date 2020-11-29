@@ -12,9 +12,10 @@ export class JsLoaderService {
       let node = document.createElement('script');
       node.src = url;
       node.type = 'text/javascript';
-      node.charset = 'utf-8';
+      // console.log("node: " + node.outerHTML);
+      // node.charset = 'utf-8';
       document.getElementsByTagName('head')[0]
-        .appendChild(node);
+      .appendChild(node);
       node.onload = () => {
         console.log(`The javascript file ${url} has been loaded.`);
         resolve();

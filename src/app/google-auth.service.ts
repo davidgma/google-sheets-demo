@@ -10,6 +10,7 @@ declare global {
 })
 export class GoogleAuthService {
     public javascriptFile = "https://apis.google.com/js/platform.js";
+    //public javascriptFile = "https://apis.google.com/js/api.js";
     public isSignedIn: boolean = false;
     public googleDisplay = "block";
     public googleUser: any;
