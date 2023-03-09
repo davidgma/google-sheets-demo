@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# git remote add origin https://github.com/davidgma/google-sheets-demo.git
+
+if [ $# -gt 0 ]; then
+	message=$*
+else
+	message="Upload changes."
+fi
+
+# Send master files to github
+git checkout master
+git add *
+git commit -a -m "${message}"
+git push origin master
+
+# to update all versions:
+# npx npm-check-updates -u
+# https://www.carlrippon.com/upgrading-npm-dependencies/
